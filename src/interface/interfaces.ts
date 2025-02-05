@@ -5,7 +5,11 @@ export interface IUser extends Document {
   email: string;
   password: string;
   address: string;
-  profileImage: string;
+  verifyCode:number,
+  verifyCodeExpire : Date,
+  forgetPasswordCode:number,
+  forgetPasswordCodeExpire : Date,
+  profileImage: string,
   role: "user" | "admin";
   isVerified: boolean;
   createdAt: Date;

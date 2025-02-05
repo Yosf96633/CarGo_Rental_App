@@ -1,6 +1,5 @@
 import { IUser } from "@/interface/interfaces";
 import { Schema, model } from "mongoose";
-
 const userSchema = new Schema<IUser>({
   username: {
     type: String,
@@ -12,6 +11,24 @@ const userSchema = new Schema<IUser>({
     type: String,
     required: true,
     unique: true,
+  },
+  verifyCode:{
+     type:Number,
+     required:true,
+     maxlength:6,
+  },
+  verifyCodeExpire:{
+       type:Date,
+       required:true,
+  },
+  forgetPasswordCode:{
+    type:Number,
+    required:true,
+    maxlength:6,
+  },
+  forgetPasswordCodeExpire:{
+    type:Date,
+       required:true,
   },
   password: {
     type: String,
