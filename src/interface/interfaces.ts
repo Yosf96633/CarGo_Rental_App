@@ -4,14 +4,6 @@ export interface IUser extends Document {
   username: string;
   email: string;
   password: string;
-  address: string;
-  verifyCode:number,
-  verifyCodeExpire : Date,
-  forgetPasswordCode:number,
-  forgetPasswordCodeExpire : Date,
-  profileImage: string,
-  role: "user" | "admin";
-  isVerified: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -61,4 +53,10 @@ export interface IReview extends Document {
   comment: string;
   createdAt: Date;
   updatedAt: Date;
+}
+export interface IDetail extends Document {
+  userId: Types.ObjectId;
+  profileImage: string;
+  role: "user" | "admin";
+  address: string;
 }

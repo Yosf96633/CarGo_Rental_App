@@ -13,6 +13,7 @@ export const signUpSchema = z.object({
   username: usernameValidation,
   email: z.string().email({ message: `Please enter valid email`}),
   password: z.string().min(6, `Password must be greater than 6 characters`),
+  
 });
 
 export type signUpSchemaInput = z.infer<typeof signUpSchema>;

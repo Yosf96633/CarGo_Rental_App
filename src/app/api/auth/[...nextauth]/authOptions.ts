@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
           if (!credentials || !credentials.email || !credentials.password) {
             throw new Error(`Please enter valid credentials`);
           }
-          const user = await userModel.findOne({ email: credentials.email });
+          const user = await userModel.findOne({email : credentials.email});
           if (!user) {
             throw new Error(`User not found. Please enter correct credentials`);
           }
