@@ -4,6 +4,9 @@ export interface IUser extends Document {
   username: string;
   email: string;
   password: string;
+  profileImage: string;
+  role: "user" | "admin";
+  address: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -53,10 +56,4 @@ export interface IReview extends Document {
   comment: string;
   createdAt: Date;
   updatedAt: Date;
-}
-export interface IDetail extends Document {
-  userId: Types.ObjectId;
-  profileImage: string;
-  role: "user" | "admin";
-  address: string;
 }

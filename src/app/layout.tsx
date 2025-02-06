@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SessionWrapper from "@/Components/SessionProvider";
+import SessionWrapper from "@/components/SessionProvider";
+import Navbar from "@/components/Navbar";
 SessionWrapper;
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <SessionWrapper>
-        <body>{children}</body>
+        <body  className=" overflow-x-hidden">
+        <Navbar/>
+          {children}
+          </body>
       </SessionWrapper>
     </html>
   );

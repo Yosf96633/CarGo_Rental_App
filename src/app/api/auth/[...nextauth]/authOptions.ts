@@ -64,8 +64,7 @@ export const authOptions: NextAuthOptions = {
           (token.email = user.email),
           (token.role = user.role),
           (token.address = user.address),
-          (token._id = user._id?.toString()),
-          (token.isVerified = account?.provider === "google" ? true : user.isVerified);
+          (token._id = user._id?.toString())
       }
       return token;
     },
@@ -75,7 +74,6 @@ export const authOptions: NextAuthOptions = {
           (session.user.username = token.username),
           (session.user.email = token.email),
           (session.user.role = token.role),
-          (session.user.isVerified = token.isVerified),
           (session.user.profileImage = token.profileImage);
       }
       return session;
